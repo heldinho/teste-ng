@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { AppServices } from 'src/app/app-services';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss'],
 })
-export class NavbarComponent {
+export class ModalComponent {
   constructor(public app: AppServices) {}
 }
