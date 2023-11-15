@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-secondary">
+<nav class="navbar fixed-top navbar-expand-lg bg-secondary px-5 py-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">Navbar scroll</a>
     <button
@@ -33,15 +33,22 @@
           <a class="nav-link disabled" aria-disabled="true">Link</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+      <button
+        type="button"
+        class="btn btn-primary position-relative"
+        (click)="app.offcanvas = true"
+      >
+        Cart
+        <span
+          *ngIf="app.cartCount > 0"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          <!-- {{ formatNum(app.cartSubtotal / 100) }} -->
+          {{ app.cartCount }}
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      </button>
     </div>
   </div>
 </nav>

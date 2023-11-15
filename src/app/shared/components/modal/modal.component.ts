@@ -8,4 +8,13 @@ import { AppServices } from 'src/app/app-services';
 })
 export class ModalComponent {
   constructor(public app: AppServices) {}
+
+  fnNo(): void {
+    this.app.modal = false;
+  }
+
+  fnYes(): void {
+    alert('Yes, enable');
+    this.app.modal = false;
+  }
 }

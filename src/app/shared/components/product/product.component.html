@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text text-secondary text-end">
+      R$ {{ price(product.price / 100) }}
+    </p>
+    <a
+      href="javascript:void(0)"
+      class="btn btn-primary"
+      (click)="fnAdd(product)"
+      >Add Cart</a
+    >
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppServices } from './app-services';
+import { AppServices, IProduct } from './app-services';
+import { products } from './shared/mocks/products.mock';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { AppServices } from './app-services';
 })
 export class AppComponent implements OnInit {
   title = 'teste-ng';
+  products: IProduct[] = products;
 
   constructor(public app: AppServices) {}
 

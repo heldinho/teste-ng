@@ -3,11 +3,12 @@ import { AppServices } from 'src/app/app-services';
 import { formatNumber } from '../../helpers';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: 'app-offcanvas',
+  templateUrl: './offcanvas.component.html',
+  styleUrls: ['./offcanvas.component.scss'],
 })
-export class NavbarComponent {
-  formatNum: any = formatNumber;
+export class OffcanvasComponent {
+  price: any = formatNumber;
+
   constructor(public app: AppServices) {}
 }
