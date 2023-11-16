@@ -22,9 +22,11 @@ export class AppServices {
   }
 
   get cartCount(): number {
-    const len = this._cart.length;
-    if (len) return this._cart.length;
-    else return 0;
+    if (this._cart) {
+      const len = this._cart.length;
+      if (len) return this._cart.length;
+      else return 0;
+    }
   }
 
   get cartSubtotal(): number {
