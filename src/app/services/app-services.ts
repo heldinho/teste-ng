@@ -11,7 +11,7 @@ export class AppServices {
   private _cart: IProduct[] = this._storage.getStorage('cart');
   private _offcanvas: boolean = false;
 
-  constructor(public _storage: StorageServices) {}
+  constructor(public _storage: StorageServices) { }
 
   set offcanvas(value: boolean) {
     this._offcanvas = value;
@@ -22,7 +22,9 @@ export class AppServices {
   }
 
   get cartCount(): number {
-    return this._cart.length;
+    const len = this._cart.length;
+    if (len) return this._cart.length;
+    else return 0;
   }
 
   get cartSubtotal(): number {
