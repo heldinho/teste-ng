@@ -1,0 +1,11 @@
+<div class="border rounded p-3 mb-3">
+  <div class="header-card">
+    <p class="name">{{ product.name }}</p>
+    <span class="btn-close" (click)="app.removeItemCart(product.id)"></span>
+  </div>
+  <div>
+    <small>
+      R$ <span class="fw-bold">{{ price(product.price / 100) }}</span>
+    </small>
+  </div>
+</div>

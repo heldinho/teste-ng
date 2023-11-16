@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
-
-export interface IProduct {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  price_sales: number;
-  sales: boolean;
-}
+import { StorageServices } from './storage-services';
+import { IProduct } from 'src/app/@types/product-types';
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +8,10 @@ export interface IProduct {
 export class AppServices {
   private _state: any = null;
   private _modal: boolean = false;
-  private _cart: IProduct[] = [];
+  private _cart: IProduct[] = this._storage.getStorage('cart');
   private _offcanvas: boolean = false;
+
+  constructor(public _storage: StorageServices) {}
 
   set offcanvas(value: boolean) {
     this._offcanvas = value;
@@ -40,10 +35,12 @@ export class AppServices {
 
   public addItemCart(product: IProduct) {
     this._cart = [...this._cart, product];
+    this._storage.setStorage('cart', this._cart);
   }
 
   public removeItemCart(id: number) {
-    this._cart = this._cart.filter((product) => product.id !== id);
+    this._cart = this._cart.filter(product => product.id !== id);
+    this._storage.setStorage('cart', this._cart);
   }
 
   get state(): any {

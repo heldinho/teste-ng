@@ -1,0 +1,23 @@
+.offcanvas {
+  .header {
+    background-color: #444;
+    h5 {
+      color: #fff;
+    }
+    .btn-close {
+      cursor: pointer;
+      background-color: #fff;
+    }
+  }
+
+  .footer {
+    padding: 10px 20px;
+    background-color: #444;
+    p {
+      color: #fff;
+    }
+    small {
+      color: #fff;
+    }
+  }
+}

@@ -1,42 +1,23 @@
-<button
-  class="btn btn-primary"
-  type="button"
-  data-bs-toggle="offcanvas"
-  data-bs-target="#staticBackdrop"
-  aria-controls="staticBackdrop"
->
-  Toggle static offcanvas
-</button>
-
 <div
-  class="offcanvas offcanvas-start"
+  class="offcanvas offcanvas-end"
   [ngClass]="{
     show: app.offcanvas
   }"
-  [ariaModal]="app.offcanvas"
   role="dialog"
   data-bs-backdrop="static"
   tabindex="-1"
-  id="staticBackdrop"
-  aria-labelledby="staticBackdropLabel"
 >
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="staticBackdropLabel">Cart</h5>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-      (click)="app.offcanvas = false"
-    ></button>
+  <div class="offcanvas-header header">
+    <h5 class="offcanvas-title">Cart</h5>
+    <span class="btn-close" (click)="app.offcanvas = false"></span>
   </div>
   <div class="offcanvas-body">
-    <div *ngFor="let product of app.getCart()" class="mb-4">
-      <h3>{{ product.name }}</h3>
-      <small>R$ {{ price(product.price / 100) }}</small>
-    </div>
+    <app-product-cart
+      *ngFor="let product of app.getCart()"
+      [product]="product"
+    ></app-product-cart>
   </div>
-  <div class="py-3 px-2">
+  <div class="footer">
     <p>SubTotal:</p>
     <small>R$ {{ price(app.cartSubtotal / 100) }}</small>
   </div>
