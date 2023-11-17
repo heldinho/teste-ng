@@ -11,7 +11,7 @@ export class AppServices {
   private _cart: IProduct[] = this._storage.getStorage('cart');
   private _offcanvas: boolean = false;
 
-  constructor(public _storage: StorageServices) { }
+  constructor(public _storage: StorageServices) {}
 
   set offcanvas(value: boolean) {
     this._offcanvas = value;
@@ -21,30 +21,48 @@ export class AppServices {
     return this._offcanvas;
   }
 
-  get cartCount(): number {
-    if (this._cart) {
-      const len = this._cart.length;
-      if (len) return this._cart.length;
+  get cartCount(): any {
+    const cart = this._cart;
+    if (cart) {
+      const len = cart.length;
+      if (len) return cart.length;
       else return 0;
     }
   }
 
   get cartSubtotal(): number {
-    return this._cart.reduce((a, c) => a + c.price, 0);
+    const cart = this._cart;
+    if (cart) {
+      return cart.reduce((a, c) => a + c.price, 0);
+    }
+    return 0;
   }
 
   public getCart() {
-    return this._cart;
+    const cart = this._cart;
+    if (cart) {
+      return cart;
+    }
+    return [];
   }
 
   public addItemCart(product: IProduct) {
-    this._cart = [...this._cart, product];
-    this._storage.setStorage('cart', this._cart);
+    const cart = this._cart;
+    if (cart) {
+      this._cart = [...this._cart, product];
+      this._storage.setStorage('cart', cart);
+    } else {
+      this._cart = [product];
+      this._storage.setStorage('cart', this._cart);
+    }
   }
 
   public removeItemCart(id: number) {
-    this._cart = this._cart.filter(product => product.id !== id);
-    this._storage.setStorage('cart', this._cart);
+    const cart = this._cart;
+    if (cart) {
+      cart.filter(product => product.id !== id);
+      this._storage.setStorage('cart', cart);
+    }
   }
 
   get state(): any {
