@@ -24,16 +24,19 @@ export class AppServices {
   get cartCount(): any {
     const cart = this._cart;
     if (cart) {
-      const len = cart.length;
-      if (len) return cart.length;
-      else return 0;
+      const len = this._cart.length;
+      if (len) {
+        return this._cart.length;
+      } else {
+        return 0;
+      }
     }
   }
 
   get cartSubtotal(): number {
     const cart = this._cart;
     if (cart) {
-      return cart.reduce((a, c) => a + c.price, 0);
+      return this._cart.reduce((a, c) => a + c.price, 0);
     }
     return 0;
   }
@@ -41,7 +44,7 @@ export class AppServices {
   public getCart() {
     const cart = this._cart;
     if (cart) {
-      return cart;
+      return this._cart;
     }
     return [];
   }
@@ -50,7 +53,7 @@ export class AppServices {
     const cart = this._cart;
     if (cart) {
       this._cart = [...this._cart, product];
-      this._storage.setStorage('cart', cart);
+      this._storage.setStorage('cart', this._cart);
     } else {
       this._cart = [product];
       this._storage.setStorage('cart', this._cart);
@@ -60,8 +63,8 @@ export class AppServices {
   public removeItemCart(id: number) {
     const cart = this._cart;
     if (cart) {
-      cart.filter(product => product.id !== id);
-      this._storage.setStorage('cart', cart);
+      this._cart = this._cart.filter(product => product.id !== id);
+      this._storage.setStorage('cart', this._cart);
     }
   }
 
