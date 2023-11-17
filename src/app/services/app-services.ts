@@ -21,7 +21,7 @@ export class AppServices {
     return this._offcanvas;
   }
 
-  get cartCount(): any {
+  get cartCount(): number {
     const cart = this._cart;
     if (cart) {
       const len = this._cart.length;
@@ -31,6 +31,7 @@ export class AppServices {
         return 0;
       }
     }
+    return 0;
   }
 
   get cartSubtotal(): number {
