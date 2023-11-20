@@ -1,16 +1,23 @@
-.header-card {
-  user-select: none;
-  display: flex;
-  justify-content: space-between;
+.card {
+  overflow: hidden;
 
-  .btn-close {
-    width: 5px;
-    height: 5px;
-    cursor: pointer;
+  .header-card {
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+
+    .btn-close {
+      width: 5px;
+      height: 5px;
+      cursor: pointer;
+    }
+
+    .name {
+      color: #0a58ca;
+      font-weight: bold;
+    }
   }
 
-  .name {
-    color: #0a58ca;
-    font-weight: bold;
+  .card-body {
   }
 }

@@ -9,6 +9,7 @@ import { ModalComponent } from './shared/components/modal/modal.component';
 import { ProductComponent } from './shared/components/product/product.component';
 import { OffcanvasComponent } from './shared/components/offcanvas/offcanvas.component';
 import { ProductCartComponent } from './shared/components/product-cart/product-cart.component';
+import { ImageDefaultComponent } from './shared/components/image-default/image-default.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProductCartComponent } from './shared/components/product-cart/product-c
     ProductComponent,
     OffcanvasComponent,
     ProductCartComponent,
+    ImageDefaultComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [AppServices],

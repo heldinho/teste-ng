@@ -1,0 +1,9 @@
+.card {
+  border: none;
+  overflow: hidden;
+  box-shadow: 0px 0px 2px #ccc;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px #777;
+  }
+}

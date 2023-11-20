@@ -1,11 +1,18 @@
-<div class="border rounded p-3 mb-3">
-  <div class="header-card">
-    <p class="name">{{ product.name }}</p>
-    <span class="btn-close" (click)="app.removeItemCart(product.id)"></span>
-  </div>
-  <div>
-    <small>
-      R$ <span class="fw-bold">{{ price(product.price / 100) }}</span>
-    </small>
+<div class="border rounded mb-3 card">
+  <div class="d-flex">
+    <div>
+      <app-image-default [width]="100" [height]="100"></app-image-default>
+    </div>
+    <div class="card-body">
+      <div class="header-card">
+        <p class="name">{{ product.name }}</p>
+        <span class="btn-close" (click)="app.removeItemCart(product.id)"></span>
+      </div>
+      <div>
+        <small>
+          R$ <span class="fw-bold">{{ price(product.price / 100) }}</span>
+        </small>
+      </div>
+    </div>
   </div>
 </div>
