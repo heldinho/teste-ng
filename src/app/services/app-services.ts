@@ -9,7 +9,7 @@ export class AppServices {
   private _state: any = null;
   private _modal: boolean = false;
   private _cart: IProduct[] = this._storage.getStorage('cart');
-  private _offcanvas: boolean = true;
+  private _offcanvas: boolean = false;
 
   constructor(public _storage: StorageServices) {}
 
