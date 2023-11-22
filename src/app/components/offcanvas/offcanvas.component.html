@@ -16,7 +16,7 @@
       *ngFor="let product of app.getCart()"
       [product]="product"
     ></app-product-cart>
-    <div>{{ holder | json }}</div>
+    <!-- <div>{{ holder | json }}</div> -->
     <div class="alert alert-warning" *ngIf="app.cartCount <= 0">
       Nenhum produto adicionado no carrinho
     </div>
