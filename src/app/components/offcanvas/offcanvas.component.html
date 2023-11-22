@@ -8,7 +8,7 @@
   tabindex="-1"
 >
   <div class="offcanvas-header header">
-    <h5 class="offcanvas-title">Cart</h5>
+    <h5 class="offcanvas-title" (click)="getHolder()">Carrinho</h5>
     <span class="btn-close" (click)="app.offcanvas = false"></span>
   </div>
   <div class="offcanvas-body body">
@@ -16,8 +16,19 @@
       *ngFor="let product of app.getCart()"
       [product]="product"
     ></app-product-cart>
+    <div>{{ holder | json }}</div>
+    <div class="alert alert-warning" *ngIf="app.cartCount <= 0">
+      Nenhum produto adicionado no carrinho
+    </div>
   </div>
   <div class="footer">
+    <button
+      type="button"
+      class="btn btn-primary btn-clean"
+      (click)="app.cleanCart()"
+    >
+      Limpar Carrinho
+    </button>
     <p>SubTotal:</p>
     <small>R$ {{ price(app.cartSubtotal / 100) }}</small>
   </div>

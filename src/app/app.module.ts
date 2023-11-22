@@ -4,12 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppServices } from './services/app-services';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { ModalComponent } from './shared/components/modal/modal.component';
-import { ProductComponent } from './shared/components/product/product.component';
-import { OffcanvasComponent } from './shared/components/offcanvas/offcanvas.component';
-import { ProductCartComponent } from './shared/components/product-cart/product-cart.component';
-import { ImageDefaultComponent } from './shared/components/image-default/image-default.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ProductComponent } from './components/product/product.component';
+import { OffcanvasComponent } from './components/offcanvas/offcanvas.component';
+import { ProductCartComponent } from './components/product-cart/product-cart.component';
+import { ImageDefaultComponent } from './components/image-default/image-default.component';
+import { ApiService } from './services/api';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ImageDefaultComponent } from './shared/components/image-default/image-d
     ImageDefaultComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [AppServices],
+  providers: [AppServices, ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

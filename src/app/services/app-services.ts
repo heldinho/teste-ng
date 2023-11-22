@@ -9,7 +9,7 @@ export class AppServices {
   private _state: any = null;
   private _modal: boolean = false;
   private _cart: IProduct[] = this._storage.getStorage('cart');
-  private _offcanvas: boolean = false;
+  private _offcanvas: boolean = true;
 
   constructor(public _storage: StorageServices) {}
 
@@ -66,6 +66,14 @@ export class AppServices {
     if (cart) {
       this._cart = this._cart.filter(product => product.id !== id);
       this._storage.setStorage('cart', this._cart);
+    }
+  }
+
+  public cleanCart() {
+    const cart = this._cart;
+    if (cart) {
+      this._cart = [];
+      this._storage.setStorage('cart', []);
     }
   }
 

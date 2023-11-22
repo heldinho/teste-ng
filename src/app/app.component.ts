@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServices } from './services/app-services';
 import { IProduct } from 'src/app/@types/product-types';
-import { products } from './shared/mocks/products-mock';
+import { products } from './mocks/products-mock';
 
 @Component({
   selector: 'app-root',
