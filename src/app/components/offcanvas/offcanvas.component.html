@@ -23,6 +23,7 @@
   </div>
   <div class="footer">
     <button
+      *ngIf="app.cartCount > 0"
       type="button"
       class="btn btn-primary btn-clean"
       (click)="app.cleanCart()"
