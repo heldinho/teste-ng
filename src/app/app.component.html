@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<app-menu-categories></app-menu-categories>
 
 <main>
   <!-- <div>
@@ -9,9 +10,7 @@
     </div>
   </div> -->
 
-  <app-modal></app-modal>
-
-  <div class="d-flex wrap gap-4 mt-3">
+  <div class="d-flex wrap gap-4">
     <app-product
       *ngFor="let product of products"
       [product]="product"
@@ -21,4 +20,5 @@
   <router-outlet></router-outlet>
 </main>
 
+<app-modal></app-modal>
 <app-offcanvas></app-offcanvas>

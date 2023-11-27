@@ -11,6 +11,7 @@ import { OffcanvasComponent } from './components/offcanvas/offcanvas.component';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
 import { ImageDefaultComponent } from './components/image-default/image-default.component';
 import { ApiService } from './services/api';
+import { MenuCategoriesComponent } from './components/menu-categories/menu-categories.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ApiService } from './services/api';
     OffcanvasComponent,
     ProductCartComponent,
     ImageDefaultComponent,
+    MenuCategoriesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [AppServices, ApiService],

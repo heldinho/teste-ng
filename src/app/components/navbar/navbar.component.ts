@@ -9,5 +9,7 @@ import { formatNumber } from 'src/app/helpers';
 })
 export class NavbarComponent {
   formatNum: any = formatNumber;
+  toggleSettings: boolean = false;
+
   constructor(public app: AppServices) {}
 }

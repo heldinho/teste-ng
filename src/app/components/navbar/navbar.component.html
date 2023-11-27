@@ -1,22 +1,17 @@
-<nav class="navbar fixed-top navbar-expand-lg bg-secondary px-5 py-3">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="javascript:void(0)">Navbar scroll</a>
     <button
-      class="navbar-toggler"
+      class="navbar-toggler p-0 border-0"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarScroll"
-      aria-controls="navbarScroll"
-      aria-expanded="false"
+      id="navbarSideCollapse"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul
-        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-        style="--bs-scroll-height: 100px"
-      >
+
+    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
             class="nav-link active"
@@ -27,19 +22,47 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
+          <a class="nav-link" href="javascript:void(0)">Notifications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Link</a>
+          <a class="nav-link" href="javascript:void(0)">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Switch account</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle show"
+            href="javascript:void(0)"
+            (click)="toggleSettings = true"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Settings</a
+          >
+          <ul class="dropdown-menu show bg-dark" *ngIf="toggleSettings">
+            <li (click)="toggleSettings = false">
+              <a class="dropdown-item" href="javascript:void(0)">Action</a>
+            </li>
+            <li (click)="toggleSettings = false">
+              <a class="dropdown-item" href="javascript:void(0)"
+                >Another action</a
+              >
+            </li>
+            <li (click)="toggleSettings = false">
+              <a class="dropdown-item" href="javascript:void(0)"
+                >Something else here</a
+              >
+            </li>
+          </ul>
         </li>
       </ul>
 
       <button
         type="button"
-        class="btn btn-primary position-relative"
+        class="btn btn-sm btn-primary position-relative"
         (click)="app.offcanvas = true"
       >
-        Cart
+        Carrinho
         <span
           *ngIf="app.cartCount > 0"
           class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
