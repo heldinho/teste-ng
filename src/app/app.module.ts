@@ -12,6 +12,7 @@ import { ProductCartComponent } from './components/product-cart/product-cart.com
 import { ImageDefaultComponent } from './components/image-default/image-default.component';
 import { ApiService } from './services/api';
 import { MenuCategoriesComponent } from './components/menu-categories/menu-categories.component';
+import { ClientsComponent } from './pages/clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MenuCategoriesComponent } from './components/menu-categories/menu-categ
     ProductCartComponent,
     ImageDefaultComponent,
     MenuCategoriesComponent,
+    ClientsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [AppServices, ApiService],
