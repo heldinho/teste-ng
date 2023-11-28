@@ -1,3 +1,104 @@
 <div>
-  <p>Bem vindo a tela de clientes.</p>
+  <ul class="nav nav-pills">
+    <li class="nav-item" (click)="tab = 1">
+      <a
+        class="nav-link"
+        [ngClass]="{
+          active: tab == 1
+        }"
+        href="javascript:void(0)"
+        >Active</a
+      >
+    </li>
+    <li class="nav-item" (click)="tab = 2">
+      <a
+        class="nav-link"
+        [ngClass]="{
+          active: tab == 2
+        }"
+        href="javascript:void(0)"
+        >Link</a
+      >
+    </li>
+    <li class="nav-item" (click)="tab = 3">
+      <a
+        class="nav-link"
+        [ngClass]="{
+          active: tab == 3
+        }"
+        href="javascript:void(0)"
+        >Link</a
+      >
+    </li>
+    <li class="nav-item" (click)="tab = 4">
+      <a
+        class="nav-link disabled"
+        [ngClass]="{
+          active: tab == 4
+        }"
+        href="javascript:void(0)"
+        >Disabled</a
+      >
+    </li>
+  </ul>
+  <div *ngIf="tab == 1">
+    <div class="row mt-4">
+      <div class="col-3">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Nome"
+            #input
+            (keyup)="keyup($event, input.value)"
+          />
+          <label for="name">Nome</label>
+        </div>
+        <p>{{ values.name }}</p>
+      </div>
+      <div class="col-3">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="document"
+            placeholder="Documento"
+          />
+          <label for="document">Documento</label>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="E-mail"
+          />
+          <label for="email">E-mail</label>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            placeholder="Celular"
+          />
+          <label for="phone">Celular</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="tab == 2">
+    <p>tab 2</p>
+  </div>
+  <div *ngIf="tab == 3">
+    <p>tab 3</p>
+  </div>
+  <div *ngIf="tab == 4">
+    <p>tab 4</p>
+  </div>
 </div>
